@@ -3,6 +3,7 @@ import Express from "express";
 import notFound from "./middleware/not-found.js"
 import errorHandler from "./middleware/error-handler.js"
 import connectDB from "./db/connect.js"
+import productRouter from "./routes/products.js"
 const app = Express()
 const PORT = process.env.PORT || 3000
 
@@ -23,7 +24,7 @@ app.get('/', (req, res) => {
     res.send(template)
 })
 
-app.use('/api/v1/products', )
+app.use('/api/v1/products', productRouter)
 
 //products route 
 
